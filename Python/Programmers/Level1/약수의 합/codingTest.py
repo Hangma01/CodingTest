@@ -7,4 +7,4 @@ def solution(n):
     return answer
 
 n = 12
-solution(n)
+print(solution(n))
