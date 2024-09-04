@@ -1,9 +1,7 @@
-def solution(x):
-    listX = list(map(int, str(x)))
-    if x % sum(i for i in listX) == 0:
-        return True
-    
-    return False
+def solution(a, b):
+   
+    return sum(i for i in range(min(a,b),max(a,b)+1))
 
-x = 13
-print(solution(x))
+a = 3
+b = 5
+print(solution(a,b))
