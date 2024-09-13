@@ -13,8 +13,9 @@ def solution(babbling):
                  
         if not babble:
             count += 1 
+            
     return count
 
-babbling=["yeayaye"]
+babbling=["yeayaye", "ayayeayaaya"]
 
 print(solution(babbling))
