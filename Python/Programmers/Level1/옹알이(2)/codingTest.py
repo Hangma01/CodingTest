@@ -1,21 +1,17 @@
 def solution(babbling):
     answer=["aya","ye","woo","ma"]
-    answerNo=["ayaaya","yeye","woowoo","mama"]
     count=0
     
     for babble in babbling:
-        for st in answerNo:
-            if babble.find(st) > -1:
-                break
-        else:
-            for i in range(len(answer)):
-                babble = babble.replace(answer[i],'') 
-                 
-        if not babble:
-            count += 1 
-            
+        for st in answer:
+            if st*2 not in babble:
+                babble = babble.replace(st,' ')
+        
+        if babble.isspace():
+            count += 1
+                
     return count
 
-babbling=["yeayaye", "ayayeayaaya"]
+babbling=["mwooa", "aya"]
 
 print(solution(babbling))
