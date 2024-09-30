@@ -1,15 +1,27 @@
 def solution(id_list, report, k):
 
-    answer = {i : 0 for i in id_list}
+    report = list(set(report))
+    nameDict = {i : 0 for i in id_list}
+    messageDict = {i : 0 for i in id_list}
+    reportList = [i.split(' ') for i in report]
     
 
-    answer = []
-    return answer
+    for report in reportList:
+        nameDict[report[1]] += 1
+
+    for name in nameDict:
+        if nameDict[name] >= k:
+  
+            for report in reportList:
+                if report[1] == name:
+                    messageDict[report[0]] += 1
+
+    return list(messageDict.values())
 
 
 
-id_list=["muzi", "frodo", "apeach", "neo"]
-report=["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
-k=2
+id_list=["con", "ryan"]
+report=["ryan con", "ryan con", "ryan con", "ryan con"]
+k=3
 
 print(solution(id_list,report,k))
